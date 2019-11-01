@@ -1,6 +1,5 @@
 ﻿using System;
 
-//namespace mvc_sql.Interfaces
 namespace mvc_sql
 {
     interface IDb

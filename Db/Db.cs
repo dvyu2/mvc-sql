@@ -1,6 +1,5 @@
 ﻿using System;
 
-//namespace mvc_sql.Db
 namespace mvc_sql
 {
     public class Db : IDb

@@ -17,12 +17,26 @@ namespace mvc_sql.Controllers
 
         public string Help(string name)
         {
-            return "Hi this is my SQL server, supported methods: Get,Add,Del";
+            return "Hi this is my SQL server, supported methods: Get(http://localhost:5000/Home/Get?id=1),Add(http://localhost:5000/Home/Set?id=1&name=user&group=grp&faculty=fac&university=psu),Del(http://localhost:5000/Home/Del?id=1)";
         }
 
-        public string Get(string name)
+        public string Get(int id)
         {
-            return "Get";
+            return "Get: " + id.ToString();
+        }
+
+        public string Add(int id, string name, string group, string faculty, string university)
+        {
+            return "Get: " + id.ToString() +
+            "Name: " + name +
+            "Group: " + group +
+            "Facylty: " + faculty +
+            "University: " + university;
+        }
+
+        public string Del(int id)
+        {
+            return "Del: " + id.ToString();
         }
 
         public IActionResult Privacy()

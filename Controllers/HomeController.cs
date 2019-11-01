@@ -10,6 +10,8 @@ namespace mvc_sql.Controllers
 {
     public class HomeController : Controller
     {
+        //public TextDb = new TextDb();
+        //        public List<Account> AccountTypes = new List<Account> { new BankAccount("", 0, "Банк Акаунт Васи", ""), new BlockchainAccount("", 0, "Блокчейн Акаунт Пети", "") };
         public IActionResult Index()
         {
             return View();
@@ -22,16 +24,20 @@ namespace mvc_sql.Controllers
 
         public string Get(int id)
         {
+            //IAccount account = AccountTypes[currentcomboBox1Index];
+            //label1.Text = account.GetBalance().ToString();
+            //IDb db = new TextDb();
             return "Get: " + id.ToString();
         }
 
-        public string Add(int id, string name, string group, string faculty, string university)
+        public string Set(int id, string name, string group, string faculty, string university)
         {
-            return "Get: " + id.ToString() +
-            "Name: " + name +
-            "Group: " + group +
-            "Facylty: " + faculty +
-            "University: " + university;
+            return "Set: Id: '" + id.ToString() +
+            "', Name: '" + name +
+            "', Group: '" + group +
+            "', Facylty: '" + faculty +
+            "', University: '" + university +
+            "'";
         }
 
         public string Del(int id)

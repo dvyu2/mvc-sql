@@ -11,6 +11,8 @@ namespace mvc_sql
             using (StreamReader r = File.OpenText("db.tdb"))
             {
                 ReadFile(r);
+                //DbRecords.Add();
+                //AuthorList.Add("Mahesh Chand");
             }
         }
 

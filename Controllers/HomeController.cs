@@ -12,6 +12,7 @@ namespace mvc_sql.Controllers
     {
         //Db DbRecords = new TextDb();
         public List<Db> DbRecords = new List<Db> { new TextDb() };
+        //public List<Db> DbRecords = new List<Db> { };
         public IActionResult Index()
         {
             return View();

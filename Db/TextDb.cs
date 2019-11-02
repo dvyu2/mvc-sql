@@ -8,14 +8,14 @@ namespace mvc_sql
         public TextDb()
             : base()
         {
-            using (StreamReader r = File.OpenText("log.txt"))
+            using (StreamReader r = File.OpenText("db.tdb"))
             {
-                DumpLog(r);
+                ReadFile(r);
             }
         }
 
 
-        public static void DumpLog(StreamReader r)
+        public static void ReadFile(StreamReader r)
         {
             string line;
             while ((line = r.ReadLine()) != null)
@@ -32,21 +32,17 @@ namespace mvc_sql
 
         public override string Set()
         {
-            using (StreamWriter w = File.AppendText("log.txt"))
+            using (StreamWriter w = File.AppendText("db.tdb"))
             {
-                Log("Test1", w);
-                Log("Test2", w);
+                WriteFile("Test1", w);
+                WriteFile("Test2", w);
             }
             return "SetTexDb";
         }
 
-        public static void Log(string logMessage, TextWriter w)
+        public static void WriteFile(string logMessage, TextWriter w)
         {
-            w.Write("\r\nLog Entry : ");
-            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
-            w.WriteLine("  :");
-            w.WriteLine($"  :{logMessage}");
-            w.WriteLine("-------------------------------");
+            w.Write("WriteTextString");
         }
 
         public override string Del()

@@ -10,8 +10,8 @@ namespace mvc_sql.Controllers
 {
     public class HomeController : Controller
     {
-        //public TextDb = new TextDb();
-        //        public List<Account> AccountTypes = new List<Account> { new BankAccount("", 0, "Банк Акаунт Васи", ""), new BlockchainAccount("", 0, "Блокчейн Акаунт Пети", "") };
+        //Db DbRecords = new TextDb();
+        public List<Db> DbRecords = new List<Db> { new TextDb() };
         public IActionResult Index()
         {
             return View();
@@ -24,10 +24,9 @@ namespace mvc_sql.Controllers
 
         public string Get(int id)
         {
-            //IAccount account = AccountTypes[currentcomboBox1Index];
-            //label1.Text = account.GetBalance().ToString();
-            //IDb db = new TextDb();
-            return "Get: " + id.ToString();
+            IDb db = DbRecords[0];
+            //IDb db = DbRecords;
+            return db.Get();
         }
 
         public string Set(int id, string name, string group, string faculty, string university)

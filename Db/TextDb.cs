@@ -26,10 +26,10 @@ namespace mvc_sql
             }
         }
 
-        public override string Get()
+        public override string Get(int id)
         {
 
-            return "GetTexDb";
+            return "GetTexDb: '" + id.ToString() + "'";
         }
 
         public override string Set()

@@ -8,7 +8,7 @@ namespace mvc_sql
         //{
         //}
 
-        public virtual string Get()
+        public virtual string Get(int id)
         {
             return "GetDb";
         }

@@ -4,7 +4,7 @@ namespace mvc_sql
 {
     interface IDb
     {
-        string Get();
+        string Get(int id);
         string Set();
         string Del();
     }

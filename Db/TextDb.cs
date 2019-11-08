@@ -16,13 +16,38 @@ namespace mvc_sql
             }
         }
 
+        public static TextDb createClass()
+        {
+            return new TextDb();
+        }
 
         public static void ReadFile(StreamReader r)
         {
-            string line;
-            while ((line = r.ReadLine()) != null)
+            //string line;
+            //while ((line = r.ReadLine()) != null)
+            string[] line;
+            //public List<TextDbObject> Strings = new List<TextDbObject> { new TextDbObject(1,"2","3","4","5") };
+            //public List<TextDbObject> Strings = new List<TextDbObject> { new TextDbObject() };
+            //public List<TextDbObject> strings = new List<TextDbObject>();
+
+            while ((line = r.ReadLine().Split(',')) != null)
             {
-                Console.WriteLine(line);
+                //Console.WriteLine(line);
+                //Console.WriteLine(line[0]);
+                int id;
+                try
+                {
+                    id = Int32.Parse(line[0]);
+                    //strings.Add(new TextDbObject(line[0], line[1], line[2], line[3], line[4]));
+                }
+                catch
+                {
+                    Console.WriteLine("Number Only Permitted! - '" + line[0] + "' received");
+                }
+                finally
+                {
+                    //Console.WriteLine("TryFinal!");
+                }
             }
         }
 

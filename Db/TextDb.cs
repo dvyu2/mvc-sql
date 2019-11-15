@@ -12,12 +12,8 @@ namespace mvc_sql
             using (StreamReader r = File.OpenText("db.tdb"))
             {
                 ReadFile(r);
+                //TextDbObject dbo = TextDbObject[0];
             }
-        }
-
-        public static TextDb createClass()
-        {
-            return new TextDb();
         }
 
         public static void ReadFile(StreamReader r)
@@ -29,7 +25,7 @@ namespace mvc_sql
             {
                 string[] splitline;
                 splitline = line.Split(',');
-                Console.WriteLine(splitline[0]);
+                //Console.WriteLine(splitline[0]);
 
                 try
                 {
@@ -38,7 +34,7 @@ namespace mvc_sql
                 }
                 catch
                 {
-                    Console.WriteLine("Number Only Permitted! - '" + line[0] + "' received");
+                    Console.WriteLine("warn: ReadFile(StreamReader) - Numbers Only Permitted! - '" + line[0] + "' received");
                 }
             }
     }

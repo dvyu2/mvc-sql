@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace mvc_sql
@@ -23,22 +24,41 @@ namespace mvc_sql
 
         public static void ReadFile(StreamReader r)
         {
-            //string line;
-            //while ((line = r.ReadLine()) != null)
-            string[] line;
+            string line;
+            /*while ((line = r.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }*/
+
+            //int id;
+            //string[] line;
             //public List<TextDbObject> Strings = new List<TextDbObject> { new TextDbObject(1,"2","3","4","5") };
             //public List<TextDbObject> Strings = new List<TextDbObject> { new TextDbObject() };
+            List<TextDbObject> strings = new List<TextDbObject>();
             //public List<TextDbObject> strings = new List<TextDbObject>();
 
-            while ((line = r.ReadLine().Split(',')) != null)
+            //while ((line = r.ReadLine().Split(',')) != null)
+            while ((line = r.ReadLine()) != null)
             {
                 //Console.WriteLine(line);
-                //Console.WriteLine(line[0]);
-                int id;
+                string[] splitline;
+                splitline = line.Split(',');
+                Console.WriteLine(splitline[0]);
+
+                //int id;
                 try
                 {
-                    id = Int32.Parse(line[0]);
-                    //strings.Add(new TextDbObject(line[0], line[1], line[2], line[3], line[4]));
+                    int id = Int32.Parse(splitline[0]);
+                    strings.Add(new TextDbObject(id, splitline[1], splitline[2], splitline[3], splitline[4]));
+                    //Console.WriteLine();
+                    /*strings.Add(new TextDbObject()
+                    {
+                        id = id,
+                        name = line[1],
+                        group = line[2],
+                        faculty = line[3],
+                        university = line[4]
+                    });*/
                 }
                 catch
                 {
@@ -49,7 +69,7 @@ namespace mvc_sql
                     //Console.WriteLine("TryFinal!");
                 }
             }
-        }
+    }
 
         public override string Get(int id)
         {

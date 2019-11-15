@@ -10,9 +10,9 @@ namespace mvc_sql.Controllers
 {
     public class HomeController : Controller
     {
-        //public List<Db> DbRecords = new List<Db> { new TextDb() };
+        public List<Db> DbRecords = new List<Db> { new TextDb() };
         //private IDb db = new TextDb();
-        private IDb db = TextDb.createClass();
+        //private IDb db = TextDb.createClass();
             
         public IActionResult Index()
         {
@@ -26,7 +26,7 @@ namespace mvc_sql.Controllers
 
         public string Get(int id)
         {
-            //IDb db = DbRecords[0];
+            IDb db = DbRecords[0];
             return db.Get(id);
         }
 

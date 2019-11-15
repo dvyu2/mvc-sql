@@ -40,5 +40,10 @@ namespace mvc_sql
             this.faculty = faculty;
             this.university = university;
         }
+
+        public override string ToString()
+        {
+            return "id = "+ id+" name: "+ name;
+        }
     }
 }

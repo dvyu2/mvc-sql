@@ -6,6 +6,8 @@ namespace mvc_sql
 {
     public class TextDb : Db
     {
+       List<TextDbObject> strings = new List<TextDbObject>();
+
         public TextDb()
             : base()
         {
@@ -16,10 +18,9 @@ namespace mvc_sql
             }
         }
 
-        public static void ReadFile(StreamReader r)
+        public void ReadFile(StreamReader r)
         {
             string line;
-            List<TextDbObject> strings = new List<TextDbObject>();
 
             while ((line = r.ReadLine()) != null)
             {
@@ -41,8 +42,9 @@ namespace mvc_sql
 
         public override string Get(int id)
         {
+            
 
-            return "GetTexDb: '" + id.ToString() + "'";
+            return strings[id].ToString();
         }
 
         public override string Set()
@@ -55,7 +57,7 @@ namespace mvc_sql
             return "SetTexDb";
         }
 
-        public static void WriteFile(string logMessage, TextWriter w)
+        public void WriteFile(string logMessage, TextWriter w)
         {
             w.Write("WriteTextString");
         }

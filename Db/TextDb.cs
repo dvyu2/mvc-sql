@@ -12,8 +12,6 @@ namespace mvc_sql
             using (StreamReader r = File.OpenText("db.tdb"))
             {
                 ReadFile(r);
-                //DbRecords.Add();
-                //AuthorList.Add("Mahesh Chand");
             }
         }
 
@@ -25,48 +23,22 @@ namespace mvc_sql
         public static void ReadFile(StreamReader r)
         {
             string line;
-            /*while ((line = r.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }*/
-
-            //int id;
-            //string[] line;
-            //public List<TextDbObject> Strings = new List<TextDbObject> { new TextDbObject(1,"2","3","4","5") };
-            //public List<TextDbObject> Strings = new List<TextDbObject> { new TextDbObject() };
             List<TextDbObject> strings = new List<TextDbObject>();
-            //public List<TextDbObject> strings = new List<TextDbObject>();
 
-            //while ((line = r.ReadLine().Split(',')) != null)
             while ((line = r.ReadLine()) != null)
             {
-                //Console.WriteLine(line);
                 string[] splitline;
                 splitline = line.Split(',');
                 Console.WriteLine(splitline[0]);
 
-                //int id;
                 try
                 {
                     int id = Int32.Parse(splitline[0]);
                     strings.Add(new TextDbObject(id, splitline[1], splitline[2], splitline[3], splitline[4]));
-                    //Console.WriteLine();
-                    /*strings.Add(new TextDbObject()
-                    {
-                        id = id,
-                        name = line[1],
-                        group = line[2],
-                        faculty = line[3],
-                        university = line[4]
-                    });*/
                 }
                 catch
                 {
                     Console.WriteLine("Number Only Permitted! - '" + line[0] + "' received");
-                }
-                finally
-                {
-                    //Console.WriteLine("TryFinal!");
                 }
             }
     }

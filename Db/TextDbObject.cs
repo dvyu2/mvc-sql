@@ -2,24 +2,6 @@
 
 namespace mvc_sql
 {
-    /*public class TextDbObject
-    {
-        public int id;
-        public string name;
-        public string group;
-        public string faculty;
-        public string university;
-
-        public void Account(int id, string name, string group, string faculty, string university)
-        {
-            this.name = name;
-            this.name = name;
-            this.group = group;
-            this.faculty = faculty;
-            this.university = university;
-        }
-    }*/
-
     public class TextDbObject
     {
         public int id { get; set; }
@@ -43,7 +25,12 @@ namespace mvc_sql
 
         public override string ToString()
         {
-            return "id = "+ id+" name: "+ name;
+            return "Get: Id: '" + id +
+            "', Name: '" + name +
+            "', Group: '" + group +
+            "', Faculty: '" + faculty +
+            "', University: '" + university +
+            "'";
         }
     }
 }

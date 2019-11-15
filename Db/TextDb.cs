@@ -42,9 +42,16 @@ namespace mvc_sql
 
         public override string Get(int id)
         {
-            
+            TextDbObject textDbObject = strings.Find( (TextDbObject obj) => obj.id == id );
 
-            return strings[id].ToString();
+            if(textDbObject != null)
+            {
+                return textDbObject.ToString();
+            }
+            else
+            {
+                return "Object id doesn't exist";
+            }
         }
 
         public override string Set()
